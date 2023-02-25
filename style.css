@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(119, 42, 42);
+}
+
+.container {
+    max-width: 650px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.container h1 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.container nav {
+    display: flex;
+    justify-content: center;
+}
+
+.container nav label {
+    padding: 15px 40px;
+    border-radius: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.conteudo {
+    display: none;
+    padding: 20px 15px;
+}
+
+.conteudo h2 {
+    margin-bottom: 20px;
+}
+
+#inicio:checked ~ section .conteudo-inicio, 
+#projetos:checked ~ section .conteudo-projetos,
+#contato:checked ~ section .conteudo-contato, 
+#colaboradores:checked ~ section .conteudo-colabores { 
+    display: block;
+    animation: contentAnimate 0.3s
+}
+
+#inicio:checked ~ nav .inicio,
+#projetos:checked ~ nav .projetos,
+#contato:checked ~ nav .contato,
+#colaboradores:checked ~ nav .colaboradores
+ {
+    background-color: rgb(119, 42, 42);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    animation: tabsAnimate 0.25s;
+}
+
+@keyframes tabsAnimate {
+    from {
+        opacity: 0%
+    }
+    to {
+        opacity: 100%
+    }
+
+}
+
+@keyframes contentAnimate {
+    from {
+        margin-top: -20px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
